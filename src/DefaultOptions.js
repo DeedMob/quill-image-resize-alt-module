@@ -4,6 +4,7 @@ export default {
         'Toolbar',
         'Resize',
     ],
+    altTextPromptText: "Please enter a label for the image for screenreaders and search engines (alt text)",
     overlayStyles: {
         position: 'absolute',
         boxSizing: 'border-box',

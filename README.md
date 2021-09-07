@@ -1,3 +1,6 @@
+this is a fork in order to allow overriding the alt text prompt text. This fork introduces the
+`altTextPromptText` option. We also changed an icon.
+
 # Quill ImageResize Module
 
 A module for Quill rich text editor to allow images to be resized.
@@ -14,20 +17,20 @@ a module that enables copy-paste and drag/drop for Quill.
 ### Webpack/ES6
 
 ```javascript
-import Quill from 'quill';
-import ImageResize from 'quill-image-resize-alt-module';
+import Quill from "quill";
+import ImageResize from "quill-image-resize-alt-module";
 
-Quill.register('modules/imageResize', ImageResize);
+Quill.register("modules/imageResize", ImageResize);
 
 const quill = new Quill(editor, {
-    // ...
-    modules: {
-        // ...
-        imageResize: {
-            parchment: Quill.import('parchment')
-            // See optional "config" below
-        }
-    }
+	// ...
+	modules: {
+		// ...
+		imageResize: {
+			parchment: Quill.import("parchment"),
+			// See optional "config" below
+		},
+	},
 });
 ```
 
@@ -41,28 +44,29 @@ Copy image-resize.min.js into your web root or include from node_modules
 
 ```javascript
 var quill = new Quill(editor, {
-    // ...
-    modules: {
-        // ...
-        ImageResize: {
-            // See optional "config" below
-        }
-    }
+	// ...
+	modules: {
+		// ...
+		ImageResize: {
+			// See optional "config" below
+		},
+	},
 });
 ```
 
 ### Config
 
 For the default experience, pass an object with parchment, like so:
+
 ```javascript
 var quill = new Quill(editor, {
-    // ...
-    modules: {
-        // ...
-        ImageResize: {
-            parchment: Quill.import('parchment')
-        }
-    }
+	// ...
+	modules: {
+		// ...
+		ImageResize: {
+			parchment: Quill.import("parchment"),
+		},
+	},
 });
 ```
 
@@ -71,13 +75,13 @@ the default is to include all modules:
 
 ```javascript
 const quill = new Quill(editor, {
-    // ...
-    modules: {
-        // ...
-        ImageResize: {
-            modules: [ 'Resize', 'DisplaySize', 'Toolbar' ]
-        }
-    }
+	// ...
+	modules: {
+		// ...
+		ImageResize: {
+			modules: ["Resize", "DisplaySize", "Toolbar"],
+		},
+	},
 });
 ```
 
@@ -91,19 +95,19 @@ The look and feel can be controlled with options:
 
 ```javascript
 var quill = new Quill(editor, {
-    // ...
-    modules: {
-        // ...
-        ImageResize: {
-            // ...
-            handleStyles: {
-                backgroundColor: 'black',
-                border: 'none',
-                color: white
-                // other camelCase styles for size display
-            }
-        }
-    }
+	// ...
+	modules: {
+		// ...
+		ImageResize: {
+			// ...
+			handleStyles: {
+				backgroundColor: "black",
+				border: "none",
+				color: white,
+				// other camelCase styles for size display
+			},
+		},
+	},
 });
 ```
 
@@ -115,19 +119,19 @@ The look and feel can be controlled with options:
 
 ```javascript
 var quill = new Quill(editor, {
-    // ...
-    modules: {
-        // ...
-        ImageResize: {
-            // ...
-            displayStyles: {
-                backgroundColor: 'black',
-                border: 'none',
-                color: white
-                // other camelCase styles for size display
-            }
-        }
-    }
+	// ...
+	modules: {
+		// ...
+		ImageResize: {
+			// ...
+			displayStyles: {
+				backgroundColor: "black",
+				border: "none",
+				color: white,
+				// other camelCase styles for size display
+			},
+		},
+	},
 });
 ```
 
@@ -139,25 +143,25 @@ The look and feel can be controlled with options:
 
 ```javascript
 var quill = new Quill(editor, {
-    // ...
-    modules: {
-        // ...
-        ImageResize: {
-            // ...
-            toolbarStyles: {
-                backgroundColor: 'black',
-                border: 'none',
-                color: white
-                // other camelCase styles for size display
-            },
-            toolbarButtonStyles: {
-                // ...
-            },
-            toolbarButtonSvgStyles: {
-                // ...
-            },
-        }
-    }
+	// ...
+	modules: {
+		// ...
+		ImageResize: {
+			// ...
+			toolbarStyles: {
+				backgroundColor: "black",
+				border: "none",
+				color: white,
+				// other camelCase styles for size display
+			},
+			toolbarButtonStyles: {
+				// ...
+			},
+			toolbarButtonSvgStyles: {
+				// ...
+			},
+		},
+	},
 });
 ```
 
@@ -169,20 +173,20 @@ the module setup.
 For example,
 
 ```javascript
-import { Resize, BaseModule } from 'quill-image-resize-alt-module';
+import { Resize, BaseModule } from "quill-image-resize-alt-module";
 
 class MyModule extends BaseModule {
-    // See src/modules/BaseModule.js for documentation on the various lifecycle callbacks
+	// See src/modules/BaseModule.js for documentation on the various lifecycle callbacks
 }
 
 var quill = new Quill(editor, {
-    // ...
-    modules: {
-        // ...
-        ImageResize: {
-            modules: [ MyModule, Resize ],
-            // ...
-        }
-    }
+	// ...
+	modules: {
+		// ...
+		ImageResize: {
+			modules: [MyModule, Resize],
+			// ...
+		},
+	},
 });
 ```

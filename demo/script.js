@@ -1,6 +1,9 @@
 var quill = new Quill('#editor', {
 	theme: 'snow',
 	modules: {
-		imageResize: {}
-	}
+		imageResize: {
+			altTextPromptText: "Gimme that alt text",
+            parchment: Quill.import('parchment'),
+        },
+	},
 });

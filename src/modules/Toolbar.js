@@ -1,7 +1,7 @@
 import IconAlignLeft from 'quill/assets/icons/align-left.svg';
 import IconAlignCenter from 'quill/assets/icons/align-center.svg';
 import IconAlignRight from 'quill/assets/icons/align-right.svg';
-import IconComment from 'quill/assets/icons/comment.svg';
+import IconComment from 'quill/assets/icons/font.svg';
 // import IconLink from 'quill/assets/icons/link.svg';
 
 import { BaseModule } from './BaseModule';
@@ -58,7 +58,7 @@ export class Toolbar extends BaseModule {
 				apply: () => {
 					const findImg = Parchment.find(this.img);
 					const imgTitle = findImg.domNode.alt;
-					let title = prompt("Please enter a title (alt text)", imgTitle);
+					let title = prompt(this.options.altTextPromptText, imgTitle);
 					if (title !== null) {
 						findImg.domNode.alt = title;
 					}
